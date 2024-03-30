@@ -1,0 +1,120 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:models="clr-namespace:SmartStep.Models"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Height="500" Background="#FAEBD7"
+        x:Class="SmartStep.Menu"
+        Title="Главная панель">
+        <TabControl>
+                <TabItem Header="Главная" FontSize="20">
+                        <StackPanel Orientation="Horizontal">
+                                <Grid Background="#FAEBD7">
+                                        <ListBox></ListBox>
+                                        <ListBox></ListBox>
+                                </Grid>
+                        </StackPanel>
+                </TabItem>
+                <TabItem Header="Сведения об обучающихся" FontSize="20">
+                                        <StackPanel Orientation="Vertical">
+                                                <DataGrid x:Name="Student2"
+                                                          AutoGenerateColumns="False"
+                                                          IsReadOnly="True"
+                                                          GridLinesVisibility="All"
+                                                          BorderThickness="1"
+                                                          BorderBrush="Gray"
+                                                          Background="#FAEBD7"
+                                                          x:DataType="models:Students"
+                                                          Margin="0,20"
+                                                          HorizontalAlignment="Left">
+                                                        <DataGrid.Columns>
+                                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding Name}"/>
+                                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Birthday}"/>
+                                                                <DataGridTextColumn Header="Школа" Binding= "{Binding School}"/>
+                                                                <DataGridTextColumn Header="Класс" Binding= "{Binding Class}"/>
+                                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding Address}"/>
+                                                                <DataGridTextColumn Header="Имя родителя" Binding= "{Binding Parent_name}"/>
+                                                                <DataGridTextColumn Header="Номер родителя" Binding= "{Binding Parent_number}"/>
+                                                                <DataGridTextColumn Header="Дата начала" Binding= "{Binding Start_date}"/>
+                                                        </DataGrid.Columns>
+                                                </DataGrid>
+                                                <StackPanel Orientation="Horizontal">
+                                                        <Button Content="Команды" Click="Button_OnCommand" Width="100" HorizontalContentAlignment="Center"></Button>
+                                                </StackPanel>
+                                        </StackPanel>
+                                </TabItem>
+                
+                <TabItem Header="Мероприятия" FontSize="20">
+                        <StackPanel Orientation="Vertical">
+                                <DataGrid x:Name="Events1"
+                                          AutoGenerateColumns="False"
+                                          IsReadOnly="True"
+                                          Background="#FAEBD7"
+                                          GridLinesVisibility="All"
+                                          BorderThickness="1"
+                                          BorderBrush="Gray"
+                                          x:DataType="models:Events"
+                                          Margin="0,20"
+                                          HorizontalAlignment="Left">
+                                        <DataGrid.Columns>
+                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding Date}"/>
+                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding EventName}"/>
+                                                <DataGridTextColumn Header="Контакты" Binding= "{Binding Description}"/>
+                                                <DataGridTextColumn Header="Документ" Binding= "{Binding Location}"/>
+                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding Count}"/>
+                                        </DataGrid.Columns>
+                                </DataGrid>
+                                <StackPanel Orientation="Horizontal">
+                                        <Button Content="Команды" Click="Button_OnCommand" Width="100" HorizontalContentAlignment="Center"></Button>
+                                </StackPanel>
+                        </StackPanel>
+                </TabItem>
+                <TabItem Header="Достижения" FontSize="20">
+                        <StackPanel Orientation="Vertical">
+                                <DataGrid x:Name="Achievements1"
+                                          AutoGenerateColumns="False"
+                                          IsReadOnly="True"
+                                          Background="#FAEBD7"
+                                          GridLinesVisibility="All"
+                                          BorderThickness="1"
+                                          BorderBrush="Gray"
+                                          x:DataType="models:Achievements"
+                                          Margin="0,20"
+                                          HorizontalAlignment="Left">
+                                        <DataGrid.Columns>
+                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding NameStudent}"/>
+                                                <DataGridTextColumn Header="Название мероприятия" Binding= "{Binding NameEvent}"/>
+                                                <DataGridTextColumn Header="Результат участия" Binding= "{Binding Result}"/>
+                                        </DataGrid.Columns>
+                                </DataGrid>
+                                <StackPanel Orientation="Horizontal">
+                                        <Button Content="Команды" Click="Button_OnCommand" Width="100" HorizontalContentAlignment="Center"></Button>
+                                </StackPanel>
+                        </StackPanel>
+                </TabItem>
+                <TabItem Header="Инструктаж по ТБ" FontSize="20">
+                        <StackPanel Orientation="Horizontal">
+                                <DataGrid x:Name="Safety1"
+                                          AutoGenerateColumns="False"
+                                          IsReadOnly="True"
+                                          Background="#FAEBD7"
+                                          GridLinesVisibility="All"
+                                          BorderThickness="1"
+                                          BorderBrush="Gray"
+                                          x:DataType="models:Safety"
+                                          Margin="0,20"
+                                          MaxWidth="500"
+                                          HorizontalAlignment="Left">
+                                        <DataGrid.Columns>
+                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding NameStudent}"/>
+                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Date}"/>
+                                                <DataGridTextColumn Header="Контакты" Binding= "{Binding Description}"/>
+                                                <DataGridTextColumn Header="Документ" Binding= "{Binding Check}"/>
+                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding SafetyName}"/>
+                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding NameTeacher}"/>
+                                        </DataGrid.Columns>
+                                </DataGrid>
+                        </StackPanel>
+                </TabItem>
+        </TabControl>
+</Window>

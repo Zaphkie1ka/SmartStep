@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rsNU4KAbqL3r8jXjQvtMpCdJ/TJsa6RdRxBQLR+Au0fHXPrJm1ngu2UgHTTNAKFvAACqXla4Hx8Eo/5CRRyI9w==",
+  "dgSpecHash": "iU6jz3W3Km+4vLfjuhhLesVsa/upKLN015kKpVGJTrf555YMHM9pm9wGfoBTW0uGwcCQcgyUMav+dfHwilSyDg==",
   "success": true,
   "projectFilePath": "C:\\Users\\skyri\\RiderProjects\\SmartStep\\SmartStep\\SmartStep.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,8 @@
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.win32\\11.0.10\\avalonia.win32.11.0.10.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.x11\\11.0.10\\avalonia.x11.11.0.10.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\skyri\\.nuget\\packages\\colortextblock.avalonia\\11.0.2\\colortextblock.avalonia.11.0.2.nupkg.sha512",
+    "C:\\Users\\skyri\\.nuget\\packages\\dialoghost.avalonia\\0.7.7\\dialoghost.avalonia.0.7.7.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\harfbuzzsharp\\7.3.0\\harfbuzzsharp.7.3.0.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\harfbuzzsharp.nativeassets.linux\\7.3.0\\harfbuzzsharp.nativeassets.linux.7.3.0.nupkg.sha512",
@@ -30,6 +32,8 @@
     "C:\\Users\\skyri\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.5\\k4os.compression.lz4.streams.1.3.5.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\skyri\\.nuget\\packages\\markdown.avalonia.tight\\11.0.2\\markdown.avalonia.tight.11.0.2.nupkg.sha512",
+    "C:\\Users\\skyri\\.nuget\\packages\\messagebox.avalonia\\3.1.5.1\\messagebox.avalonia.3.1.5.1.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.0.0\\microsoft.codeanalysis.analyzers.3.0.0.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\microsoft.codeanalysis.common\\3.8.0\\microsoft.codeanalysis.common.3.8.0.nupkg.sha512",
@@ -63,6 +67,7 @@
     "C:\\Users\\skyri\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
+    "C:\\Users\\skyri\\.nuget\\packages\\system.reactive\\6.0.0\\system.reactive.6.0.0.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",

@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[11.0.10, )"
             },
+            "MessageBox.Avalonia": {
+              "target": "Package",
+              "version": "[3.1.5.1, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.3.0, )"

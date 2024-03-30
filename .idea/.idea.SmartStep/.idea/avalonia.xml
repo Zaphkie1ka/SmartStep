@@ -3,7 +3,10 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="SmartStep/App.axaml" value="SmartStep/SmartStep.csproj" />
+        <entry key="SmartStep/Command.axaml" value="SmartStep/SmartStep.csproj" />
         <entry key="SmartStep/MainWindow.axaml" value="SmartStep/SmartStep.csproj" />
+        <entry key="SmartStep/Menu.axaml" value="SmartStep/SmartStep.csproj" />
       </map>
     </option>
   </component>

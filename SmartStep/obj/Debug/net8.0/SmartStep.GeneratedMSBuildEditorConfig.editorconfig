@@ -20,5 +20,11 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [C:/Users/skyri/RiderProjects/SmartStep/SmartStep/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/Command.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/skyri/RiderProjects/SmartStep/SmartStep/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/Menu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
