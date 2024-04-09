@@ -136,6 +136,19 @@
           }
         }
       },
+      "Avalonia.Controls.TreeDataGrid/11.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0",
+          "System.Reactive": "5.0.0"
+        },
+        "compile": {
+          "lib/net5.0/Avalonia.Controls.TreeDataGrid.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Avalonia.Controls.TreeDataGrid.dll": {}
+        }
+      },
       "Avalonia.Desktop/11.0.10": {
         "type": "package",
         "dependencies": {
@@ -2023,6 +2036,18 @@
         "lib/net6.0/Avalonia.Controls.DataGrid.xml",
         "lib/netstandard2.0/Avalonia.Controls.DataGrid.dll",
         "lib/netstandard2.0/Avalonia.Controls.DataGrid.xml"
+      ]
+    },
+    "Avalonia.Controls.TreeDataGrid/11.0.2": {
+      "sha512": "u4IBeU5SqBOaNNdOi9k7AkNNlrtafZ6GyVAyPm84NxSLg8Wm6tqP+dzKhmZzPHGdsAIA/RtcyajyRNykI4VWlg==",
+      "type": "package",
+      "path": "avalonia.controls.treedatagrid/11.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "avalonia.controls.treedatagrid.11.0.2.nupkg.sha512",
+        "avalonia.controls.treedatagrid.nuspec",
+        "lib/net5.0/Avalonia.Controls.TreeDataGrid.dll"
       ]
     },
     "Avalonia.Desktop/11.0.10": {
@@ -5518,6 +5543,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Avalonia >= 11.0.10",
+      "Avalonia.Controls.TreeDataGrid >= 11.0.2",
       "Avalonia.Desktop >= 11.0.10",
       "Avalonia.Diagnostics >= 11.0.10",
       "Avalonia.Fonts.Inter >= 11.0.10",
@@ -5566,6 +5592,10 @@
           "Avalonia": {
             "target": "Package",
             "version": "[11.0.10, )"
+          },
+          "Avalonia.Controls.TreeDataGrid": {
+            "target": "Package",
+            "version": "[11.0.2, )"
           },
           "Avalonia.Desktop": {
             "target": "Package",

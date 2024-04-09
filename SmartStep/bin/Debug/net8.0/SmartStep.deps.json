@@ -9,6 +9,7 @@
       "SmartStep/1.0.0": {
         "dependencies": {
           "Avalonia": "11.0.10",
+          "Avalonia.Controls.TreeDataGrid": "11.0.2",
           "Avalonia.Desktop": "11.0.10",
           "Avalonia.Diagnostics": "11.0.10",
           "Avalonia.Fonts.Inter": "11.0.10",
@@ -111,6 +112,18 @@
           "lib/net6.0/Avalonia.Controls.DataGrid.dll": {
             "assemblyVersion": "11.0.10.0",
             "fileVersion": "11.0.10.0"
+          }
+        }
+      },
+      "Avalonia.Controls.TreeDataGrid/11.0.2": {
+        "dependencies": {
+          "Avalonia": "11.0.10",
+          "System.Reactive": "6.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Avalonia.Controls.TreeDataGrid.dll": {
+            "assemblyVersion": "11.0.2.0",
+            "fileVersion": "11.0.2.0"
           }
         }
       },
@@ -1201,6 +1214,13 @@
       "sha512": "sha512-a8es+nGJvXK+rh76iFRkp7UHPvaN+WeMyH7S746r25FnrBYLkvtpEjGGKRWTFX+eO2cFcDh1qHJa63aaElivww==",
       "path": "avalonia.controls.datagrid/11.0.10",
       "hashPath": "avalonia.controls.datagrid.11.0.10.nupkg.sha512"
+    },
+    "Avalonia.Controls.TreeDataGrid/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u4IBeU5SqBOaNNdOi9k7AkNNlrtafZ6GyVAyPm84NxSLg8Wm6tqP+dzKhmZzPHGdsAIA/RtcyajyRNykI4VWlg==",
+      "path": "avalonia.controls.treedatagrid/11.0.2",
+      "hashPath": "avalonia.controls.treedatagrid.11.0.2.nupkg.sha512"
     },
     "Avalonia.Desktop/11.0.10": {
       "type": "package",

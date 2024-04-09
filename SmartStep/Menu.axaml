@@ -8,11 +8,18 @@
         Title="Главная панель">
         <TabControl>
                 <TabItem Header="Главная" FontSize="20">
-                        <StackPanel Orientation="Horizontal">
-                                <Grid Background="#FAEBD7">
-                                        <ListBox></ListBox>
-                                        <ListBox></ListBox>
-                                </Grid>
+                        <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <Label Content="Группа" FontSize="18" VerticalAlignment="Center"></Label>
+                                        <ComboBox >
+                                                <ComboBoxItem>ГБ-01</ComboBoxItem>
+                                                <ComboBoxItem>ИП-03</ComboBoxItem>
+                                                <ComboBoxItem>ВХ-13</ComboBoxItem>
+                                                <ComboBoxItem>ШП-12</ComboBoxItem>
+                                                <ComboBoxItem>ДЛ-24</ComboBoxItem>
+                                        </ComboBox>
+                                </StackPanel>
+                                <TreeDataGrid></TreeDataGrid>
                         </StackPanel>
                 </TabItem>
                 <TabItem Header="Сведения об обучающихся" FontSize="20">

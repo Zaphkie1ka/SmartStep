@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iU6jz3W3Km+4vLfjuhhLesVsa/upKLN015kKpVGJTrf555YMHM9pm9wGfoBTW0uGwcCQcgyUMav+dfHwilSyDg==",
+  "dgSpecHash": "OLpjfv49mJVKgLZFEBulUCiovcrOnNYfmgxQTUBlWYOoLnl/jOEDg4hFxTQDrXj1w86/AX45VlZPZ67x/aPH1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\skyri\\RiderProjects\\SmartStep\\SmartStep\\SmartStep.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.buildservices\\0.0.29\\avalonia.buildservices.0.0.29.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.controls.colorpicker\\11.0.10\\avalonia.controls.colorpicker.11.0.10.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.controls.datagrid\\11.0.10\\avalonia.controls.datagrid.11.0.10.nupkg.sha512",
+    "C:\\Users\\skyri\\.nuget\\packages\\avalonia.controls.treedatagrid\\11.0.2\\avalonia.controls.treedatagrid.11.0.2.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.desktop\\11.0.10\\avalonia.desktop.11.0.10.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.diagnostics\\11.0.10\\avalonia.diagnostics.11.0.10.nupkg.sha512",
     "C:\\Users\\skyri\\.nuget\\packages\\avalonia.fonts.inter\\11.0.10\\avalonia.fonts.inter.11.0.10.nupkg.sha512",
