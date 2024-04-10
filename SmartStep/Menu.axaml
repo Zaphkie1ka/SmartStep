@@ -19,7 +19,23 @@
                                                 <ComboBoxItem>ДЛ-24</ComboBoxItem>
                                         </ComboBox>
                                 </StackPanel>
-                                <TreeDataGrid></TreeDataGrid>
+                                <DataGrid x:Name="MainGrid"
+                                        AutoGenerateColumns="False"
+                                        IsReadOnly="True"
+                                        GridLinesVisibility="All"
+                                        BorderThickness="1"
+                                        BorderBrush="Gray"
+                                        Margin="0,20"
+                                        MaxWidth="1400"
+                                        x:DataType="models:LessonRecord"
+                                        HorizontalAlignment="Left">
+                                        <DataGrid.Columns>
+                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding Name}"/>
+                                                <DataGridTextColumn Header="Дата проведения" Binding= "{Binding Date}"/>
+                                                <DataGridTextColumn Header="Часы" Binding= "{Binding Hours}"/>
+                                                <DataGridTextColumn Header="Примечание" Binding= "{Binding Note}"/>
+                                        </DataGrid.Columns>
+                                </DataGrid>
                         </StackPanel>
                 </TabItem>
                 <TabItem Header="Сведения об обучающихся" FontSize="20">

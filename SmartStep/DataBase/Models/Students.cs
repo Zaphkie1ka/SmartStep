@@ -6,7 +6,7 @@ namespace SmartStep.Models;
 public class Students
 {
     public int ID { get; set; }
-    public string Name { get; set; }
+    public int Name { get; set; }
     public DateOnly Birthday { get; set; }
     public string School { get; set; }
     public int Class { get; set; }

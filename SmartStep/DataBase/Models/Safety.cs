@@ -9,6 +9,6 @@ public class Safety
     public DateOnly Date { get; set; }
     public string Description { get; set; }
     public bool Check { get; set; }
-    public string SafetyName { get; set; }
+    public int SafetyName { get; set; }
     public int NameTeacher { get; set; }
 }
