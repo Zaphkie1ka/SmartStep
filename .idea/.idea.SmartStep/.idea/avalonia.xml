@@ -5,8 +5,12 @@
       <map>
         <entry key="SmartStep/App.axaml" value="SmartStep/SmartStep.csproj" />
         <entry key="SmartStep/Command.axaml" value="SmartStep/SmartStep.csproj" />
+        <entry key="SmartStep/EventWindow.axaml" value="SmartStep/SmartStep.csproj" />
         <entry key="SmartStep/MainWindow.axaml" value="SmartStep/SmartStep.csproj" />
         <entry key="SmartStep/Menu.axaml" value="SmartStep/SmartStep.csproj" />
+        <entry key="SmartStep/ProgressWindow.axaml" value="SmartStep/SmartStep.csproj" />
+        <entry key="SmartStep/SafetyWindow.axaml" value="SmartStep/SmartStep.csproj" />
+        <entry key="SmartStep/StudentWindow.axaml" value="SmartStep/SmartStep.csproj" />
       </map>
     </option>
   </component>

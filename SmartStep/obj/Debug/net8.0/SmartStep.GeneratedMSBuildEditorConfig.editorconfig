@@ -17,10 +17,19 @@ build_property.ProjectDir = C:\Users\skyri\RiderProjects\SmartStep\SmartStep\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/App.axaml]
+[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/AddWindow/EventWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/Command.axaml]
+[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/AddWindow/ProgressWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/AddWindow/SafetyWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/AddWindow/StudentWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/skyri/RiderProjects/SmartStep/SmartStep/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/skyri/RiderProjects/SmartStep/SmartStep/MainWindow.axaml]

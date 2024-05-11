@@ -19,4 +19,23 @@
         <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
         <PackageReference Include="MySql.Data" Version="8.3.0" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="AddWindow\StudentWindow.axaml.cs">
+        <DependentUpon>StudentWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="AddWindow\EventWindow.axaml.cs">
+        <DependentUpon>EventWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="AddWindow\SafetyWindow.axaml.cs">
+        <DependentUpon>SafetyWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="AddWindow\ProgressWindow.axaml.cs">
+        <DependentUpon>ProgressWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

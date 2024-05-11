@@ -47,15 +47,16 @@
                                         Margin="0,20"
                                         MaxWidth="1400"
                                         HorizontalAlignment="Left">
-                                        <DataGrid.Columns>
-                                                
-                                        </DataGrid.Columns>
                                 </DataGrid>
                         </StackPanel>
                 </TabItem>
                 <TabItem Header="Сведения об обучающихся" FontSize="20">
                                         <StackPanel Orientation="Vertical">
-                                                <DataGrid x:Name="Student2"
+                                                <StackPanel Orientation="Horizontal">
+                                                        <Button Content="Добавить" Click="Button_Add_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                                        <Button Content="Изменить" Click="Button_Upd_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                                </StackPanel>
+                                                <DataGrid x:Name="Student1"
                                                           AutoGenerateColumns="False"
                                                           IsReadOnly="True"
                                                           GridLinesVisibility="All"
@@ -78,14 +79,15 @@
                                                                 <DataGridTextColumn Header="Приказ" Binding= "{Binding OrderNumber}"/>
                                                         </DataGrid.Columns>
                                                 </DataGrid>
-                                                <StackPanel Orientation="Horizontal">
-                                                        <Button Content="Команды" Width="100" HorizontalContentAlignment="Center"></Button>
-                                                </StackPanel>
                                         </StackPanel>
                                 </TabItem>
                 
                 <TabItem Header="Мероприятия" FontSize="20">
                         <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                        <Button Content="Добавить" Click="Button_Add_Events" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                        <Button Content="Изменить" Click="Button_Upd_Events" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                </StackPanel>
                                 <DataGrid x:Name="Events1"
                                           AutoGenerateColumns="False"
                                           IsReadOnly="True"
@@ -103,13 +105,14 @@
                                                 <DataGridTextColumn Header="Место" Binding= "{Binding Count}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>
-                                <StackPanel Orientation="Horizontal">
-                                        <Button Content="Команды" Width="100" HorizontalContentAlignment="Center"></Button>
-                                </StackPanel>
                         </StackPanel>
                 </TabItem>
                 <TabItem Header="Достижения" FontSize="20">
                         <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                        <Button Content="Добавить" Click="Button_Add_Progress" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                        <Button Content="Изменить" Click="Button_Upd_Progress" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                </StackPanel>
                                 <DataGrid x:Name="Achievements1"
                                           AutoGenerateColumns="False"
                                           IsReadOnly="True"
@@ -126,13 +129,14 @@
                                                 <DataGridTextColumn Header="Результат участия" Binding= "{Binding Result}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>
-                                <StackPanel Orientation="Horizontal">
-                                        <Button Content="Команды" Width="100" HorizontalContentAlignment="Center"></Button>
-                                </StackPanel>
                         </StackPanel>
                 </TabItem>
                 <TabItem Header="Инструктаж по ТБ" FontSize="20">
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                        <Button Content="Добавить" Click="Button_Add_Safety" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                        <Button Content="Изменить" Click="Button_Upd_Safety" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                </StackPanel>
                                 <DataGrid x:Name="Safety1"
                                           AutoGenerateColumns="False"
                                           IsReadOnly="True"

@@ -40,7 +40,7 @@ public partial class Menu : Window
         DataGridTextColumn studentColumn = new DataGridTextColumn
         {
             Header = "ФИО ученика",
-            Binding = new Binding("Name")
+            Binding = new Binding("Models.Student.First_Name")
         };
         MainGrid.Columns.Add(studentColumn);
         for (int day = 1; day <= DateTime.DaysInMonth(year, month); day++)
@@ -56,13 +56,13 @@ public partial class Menu : Window
         DataGridTextColumn dateColumn = new DataGridTextColumn
         {
             Header = "Дата проведения",
-            Binding = new Binding("Date"),
+            Binding = new Binding("Date")
         };
         MainGrid.Columns.Add(dateColumn);
         DataGridTextColumn descriptionColumn = new DataGridTextColumn
         {
             Header = "Содержание занятия",
-            Binding = new Binding("Description"),
+            Binding = new Binding("Description")
         };
         MainGrid.Columns.Add(descriptionColumn);
         DataGridTextColumn hoursColumn = new DataGridTextColumn
@@ -77,5 +77,44 @@ public partial class Menu : Window
             Binding = new Binding("Note")
         };
         MainGrid.Columns.Add(noteColumn);
+    }
+    private void Button_Add_Student(object? sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Button_Upd_Student(object? sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Button_Add_Events(object? sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Button_Upd_Events(object? sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Button_Add_Progress(object? sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Button_Upd_Progress(object? sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Button_Add_Safety(object? sender, RoutedEventArgs e)
+    {
+        
+    }
+
+    private void Button_Upd_Safety(object? sender, RoutedEventArgs e)
+    {
+        
     }
 }
