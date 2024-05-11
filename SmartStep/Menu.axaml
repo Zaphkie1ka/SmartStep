@@ -9,15 +9,34 @@
         <TabControl>
                 <TabItem Header="Главная" FontSize="20">
                         <StackPanel Orientation="Vertical">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <Label Content="Группа" FontSize="18" VerticalAlignment="Center"></Label>
-                                        <ComboBox >
-                                                <ComboBoxItem>ГБ-01</ComboBoxItem>
-                                                <ComboBoxItem>ИП-03</ComboBoxItem>
-                                                <ComboBoxItem>ВХ-13</ComboBoxItem>
-                                                <ComboBoxItem>ШП-12</ComboBoxItem>
-                                                <ComboBoxItem>ДЛ-24</ComboBoxItem>
-                                        </ComboBox>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                                        <StackPanel Orientation="Horizontal">
+                                                <Label Content="Месяц " FontSize="18" VerticalAlignment="Center"></Label>
+                                                <ComboBox Margin="10,0,0,0">
+                                                        <ComboBoxItem>Январь</ComboBoxItem>
+                                                        <ComboBoxItem>Февраль</ComboBoxItem>
+                                                        <ComboBoxItem>Март</ComboBoxItem>
+                                                        <ComboBoxItem>Апрель</ComboBoxItem>
+                                                        <ComboBoxItem>Май</ComboBoxItem>
+                                                        <ComboBoxItem>Июнь</ComboBoxItem>
+                                                        <ComboBoxItem>Июль</ComboBoxItem>
+                                                        <ComboBoxItem>Август</ComboBoxItem>
+                                                        <ComboBoxItem>Сентябрь</ComboBoxItem>
+                                                        <ComboBoxItem>Октябрь</ComboBoxItem>
+                                                        <ComboBoxItem>Ноябрь</ComboBoxItem>
+                                                        <ComboBoxItem>Декабрь</ComboBoxItem>
+                                                </ComboBox>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                                <Label Content="Группа" FontSize="18" VerticalAlignment="Center"></Label>
+                                                <ComboBox Margin="10,0,0,0">
+                                                        <ComboBoxItem>ГБ-01</ComboBoxItem>
+                                                        <ComboBoxItem>ИП-03</ComboBoxItem>
+                                                        <ComboBoxItem>ВХ-13</ComboBoxItem>
+                                                        <ComboBoxItem>ШП-12</ComboBoxItem>
+                                                        <ComboBoxItem>ДЛ-24</ComboBoxItem>
+                                                </ComboBox>
+                                        </StackPanel>
                                 </StackPanel>
                                 <DataGrid x:Name="MainGrid"
                                         AutoGenerateColumns="False"
@@ -27,13 +46,9 @@
                                         BorderBrush="Gray"
                                         Margin="0,20"
                                         MaxWidth="1400"
-                                        x:DataType="models:LessonRecord"
                                         HorizontalAlignment="Left">
                                         <DataGrid.Columns>
-                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding Name}"/>
-                                                <DataGridTextColumn Header="Дата проведения" Binding= "{Binding Date}"/>
-                                                <DataGridTextColumn Header="Часы" Binding= "{Binding Hours}"/>
-                                                <DataGridTextColumn Header="Примечание" Binding= "{Binding Note}"/>
+                                                
                                         </DataGrid.Columns>
                                 </DataGrid>
                         </StackPanel>
@@ -51,18 +66,20 @@
                                                           Margin="0,20"
                                                           HorizontalAlignment="Left">
                                                         <DataGrid.Columns>
-                                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding Name}"/>
+                                                                <DataGridTextColumn Header="Фамилия" Binding= "{Binding Last_Name}"/>
+                                                                <DataGridTextColumn Header="Имя" Binding= "{Binding First_Name}"/>
                                                                 <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Birthday}"/>
                                                                 <DataGridTextColumn Header="Школа" Binding= "{Binding School}"/>
                                                                 <DataGridTextColumn Header="Класс" Binding= "{Binding Class}"/>
                                                                 <DataGridTextColumn Header="Адрес" Binding= "{Binding Address}"/>
-                                                                <DataGridTextColumn Header="Имя родителя" Binding= "{Binding Parent_name}"/>
-                                                                <DataGridTextColumn Header="Номер родителя" Binding= "{Binding Parent_number}"/>
-                                                                <DataGridTextColumn Header="Дата начала" Binding= "{Binding Start_date}"/>
+                                                                <DataGridTextColumn Header="Фамилия родителя" Binding= "{Binding ParentLast_Name}"/>
+                                                                <DataGridTextColumn Header="Имя родителя" Binding= "{Binding ParentFirst_Name}"/>
+                                                                <DataGridTextColumn Header="Номер родителя" Binding= "{Binding ParentNumber}"/>
+                                                                <DataGridTextColumn Header="Приказ" Binding= "{Binding OrderNumber}"/>
                                                         </DataGrid.Columns>
                                                 </DataGrid>
                                                 <StackPanel Orientation="Horizontal">
-                                                        <Button Content="Команды" Click="Button_OnCommand" Width="100" HorizontalContentAlignment="Center"></Button>
+                                                        <Button Content="Команды" Width="100" HorizontalContentAlignment="Center"></Button>
                                                 </StackPanel>
                                         </StackPanel>
                                 </TabItem>
@@ -80,15 +97,14 @@
                                           Margin="0,20"
                                           HorizontalAlignment="Left">
                                         <DataGrid.Columns>
-                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding Date}"/>
-                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding EventName}"/>
-                                                <DataGridTextColumn Header="Контакты" Binding= "{Binding Description}"/>
-                                                <DataGridTextColumn Header="Документ" Binding= "{Binding Location}"/>
-                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding Count}"/>
+                                                <DataGridTextColumn Header="Название" Binding= "{Binding Name}"/>
+                                                <DataGridTextColumn Header="Дата проведения" Binding= "{Binding Date}"/>
+                                                <DataGridTextColumn Header="Местопроведение" Binding= "{Binding Location}"/>
+                                                <DataGridTextColumn Header="Место" Binding= "{Binding Count}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>
                                 <StackPanel Orientation="Horizontal">
-                                        <Button Content="Команды" Click="Button_OnCommand" Width="100" HorizontalContentAlignment="Center"></Button>
+                                        <Button Content="Команды" Width="100" HorizontalContentAlignment="Center"></Button>
                                 </StackPanel>
                         </StackPanel>
                 </TabItem>
@@ -101,17 +117,17 @@
                                           GridLinesVisibility="All"
                                           BorderThickness="1"
                                           BorderBrush="Gray"
-                                          x:DataType="models:Achievements"
+                                          x:DataType="models:Progress"
                                           Margin="0,20"
                                           HorizontalAlignment="Left">
                                         <DataGrid.Columns>
-                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding NameStudent}"/>
-                                                <DataGridTextColumn Header="Название мероприятия" Binding= "{Binding NameEvent}"/>
+                                                <DataGridTextColumn Header="Студент" Binding= "{Binding StudentName}"/>
+                                                <DataGridTextColumn Header="Название мероприятия" Binding= "{Binding EventName}"/>
                                                 <DataGridTextColumn Header="Результат участия" Binding= "{Binding Result}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>
                                 <StackPanel Orientation="Horizontal">
-                                        <Button Content="Команды" Click="Button_OnCommand" Width="100" HorizontalContentAlignment="Center"></Button>
+                                        <Button Content="Команды" Width="100" HorizontalContentAlignment="Center"></Button>
                                 </StackPanel>
                         </StackPanel>
                 </TabItem>
@@ -129,12 +145,8 @@
                                           MaxWidth="500"
                                           HorizontalAlignment="Left">
                                         <DataGrid.Columns>
-                                                <DataGridTextColumn Header="ФИО" Binding= "{Binding NameStudent}"/>
-                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Date}"/>
-                                                <DataGridTextColumn Header="Контакты" Binding= "{Binding Description}"/>
-                                                <DataGridTextColumn Header="Документ" Binding= "{Binding Check}"/>
-                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding SafetyName}"/>
-                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding NameTeacher}"/>
+                                                <DataGridTextColumn Header="Название" Binding= "{Binding Name}"/>
+                                                <DataGridTextColumn Header="Описание" Binding= "{Binding Description}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>
                         </StackPanel>

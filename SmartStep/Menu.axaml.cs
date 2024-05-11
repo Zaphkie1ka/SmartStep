@@ -12,11 +12,15 @@ namespace SmartStep;
 public partial class Menu : Window
 {
     private List<Students> _students;
-    private List<Teachers> _teachers;
+    private List<Directions> _directions;
     private List<Safety> _safety;
     private List<Events> _events;
-    private List<Achievements> _achievements;
-    private List<LessonRecord> _lesson;
+    private List<Progress> _progresses;
+    private List<Order> _orders;
+    private List<StudentSafety> _studsafety;
+    private List<StudentInGroup> _studingroup;
+    private List<Groups> _groups;
+    
     int year = DateTime.Now.Year;
     int month = DateTime.Now.Month;
     public Menu()
@@ -73,10 +77,5 @@ public partial class Menu : Window
             Binding = new Binding("Note")
         };
         MainGrid.Columns.Add(noteColumn);
-    }
-    private void Button_OnCommand(object? sender, RoutedEventArgs e)
-    {
-        Command window3 = new Command();
-        window3.Show();
     }
 }
