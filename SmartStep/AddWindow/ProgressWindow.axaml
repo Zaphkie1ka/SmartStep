@@ -2,8 +2,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" Width="600" Height="400" Background="#FAEBD7"
         x:Class="SmartStep.ProgressWindow"
-        Title="ProgressWindow">
-    Welcome to Avalonia!
+        Title="Достижения">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Label Content="Достижения" HorizontalAlignment="Center" FontSize="26" Margin="0,10,0,10"></Label>
+                <StackPanel Orientation="Horizontal">
+                        <Label Content="Студент" Margin="5" VerticalContentAlignment="Center"></Label>
+                        <TextBox Watermark="Иванов" Width="300" Margin="164,5,0,5"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                        <Label Content="Название мероприятия" Margin="5" VerticalContentAlignment="Center"></Label>
+                        <DatePicker DayFormat="dd" Width="300" Margin="59,5,0,5"></DatePicker>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                        <Label Content="Результат участия" Margin="5" VerticalContentAlignment="Center"></Label>
+                        <ComboBox Width="300" Margin="95,5,0,5">
+                                <ComboBoxItem>I степень</ComboBoxItem>
+                                <ComboBoxItem>II степень</ComboBoxItem>
+                                <ComboBoxItem>III степень</ComboBoxItem>
+                                <ComboBoxItem>Диплом победителя</ComboBoxItem>
+                                <ComboBoxItem>Диплом в спец. номинации</ComboBoxItem>
+                        </ComboBox>
+                </StackPanel>
+                <Panel>
+                        <Button Margin="20" Content="Добавить" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Click="Add_Button"></Button>
+                        <Button Margin="20" Content="Закрыть" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Click="Ext_Button"></Button>
+                </Panel>
+        </StackPanel>
 </Window>

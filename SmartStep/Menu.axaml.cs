@@ -26,21 +26,21 @@ public partial class Menu : Window
     public Menu()
     {
         InitializeComponent();
-        ShowBD();
+        //ShowBD();
         GenerateColumnsForMonth();
     }
 
-    public void ShowBD()
+    /*public void ShowBD()
     {
         
-    }
+    }*/
     private void GenerateColumnsForMonth()
     {
         MainGrid.Columns.Clear();
         DataGridTextColumn studentColumn = new DataGridTextColumn
         {
             Header = "ФИО ученика",
-            Binding = new Binding("Models.Student.First_Name")
+            Binding = new Binding("Models.Students.First_Name")
         };
         MainGrid.Columns.Add(studentColumn);
         for (int day = 1; day <= DateTime.DaysInMonth(year, month); day++)
@@ -80,7 +80,8 @@ public partial class Menu : Window
     }
     private void Button_Add_Student(object? sender, RoutedEventArgs e)
     {
-        
+        StudentWindow windowstud = new StudentWindow();
+        windowstud.Show();
     }
 
     private void Button_Upd_Student(object? sender, RoutedEventArgs e)
@@ -90,7 +91,8 @@ public partial class Menu : Window
 
     private void Button_Add_Events(object? sender, RoutedEventArgs e)
     {
-        
+        EventWindow windowevent = new EventWindow();
+        windowevent.Show();
     }
 
     private void Button_Upd_Events(object? sender, RoutedEventArgs e)
@@ -100,7 +102,8 @@ public partial class Menu : Window
 
     private void Button_Add_Progress(object? sender, RoutedEventArgs e)
     {
-        
+        ProgressWindow windowprog = new ProgressWindow();
+        windowprog.Show();
     }
 
     private void Button_Upd_Progress(object? sender, RoutedEventArgs e)
@@ -110,7 +113,8 @@ public partial class Menu : Window
 
     private void Button_Add_Safety(object? sender, RoutedEventArgs e)
     {
-        
+        SafetyWindow windowsafe = new SafetyWindow();
+        windowsafe.Show();
     }
 
     private void Button_Upd_Safety(object? sender, RoutedEventArgs e)

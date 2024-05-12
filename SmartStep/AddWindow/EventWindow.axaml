@@ -2,8 +2,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" Width="600" Height="400" Background="#FAEBD7"
         x:Class="SmartStep.EventWindow"
-        Title="EventWindow">
-    Welcome to Avalonia!
+        Title="Мероприятия">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <Label Content="Мероприятия" HorizontalAlignment="Center" FontSize="26" Margin="0,10,0,10"></Label>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Название" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Олимпиада" Width="300" Margin="112,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Дата проведения" Margin="5" VerticalContentAlignment="Center"></Label>
+            <DatePicker DayFormat="dd" Width="300" Margin="59,5,0,5"></DatePicker>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Локация" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="ГБПОУ РХ ХПК" Width="300" Margin="119,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Количество" Margin="5" VerticalContentAlignment="Center"></Label>
+            <NumericUpDown Margin="98,0,0,0" Width="300"></NumericUpDown>
+        </StackPanel>
+        <Panel>
+            <Button Margin="20" Content="Добавить" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Click="Add_Button"></Button>
+            <Button Margin="20" Content="Закрыть" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Click="Ext_Button"></Button>
+        </Panel>
+    </StackPanel>
 </Window>

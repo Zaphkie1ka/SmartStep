@@ -2,8 +2,54 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" Height="600" Width="600" Background="#FAEBD7"
         x:Class="SmartStep.StudentWindow"
-        Title="StudentWindow">
-    Welcome to Avalonia!
+        Title="Добавление студента">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+        <Label Content="Студенты" HorizontalAlignment="Center" FontSize="26" Margin="0,10,0,10"></Label>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Фамилия" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Иванов" Width="300" Margin="103,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Имя" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Иван" Width="300" Margin="137,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Дата рождения" Margin="5" VerticalContentAlignment="Center"></Label>
+            <DatePicker DayFormat="dd" Width="300" Margin="59,5,0,5"></DatePicker>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Школа" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Школа №26" Width="300" Margin="121,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Класс" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="4Г" Width="300" Margin="125,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Адрес" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Пушкина, 30" Width="300" Margin="124,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Фамилия родителя" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Иванов" Width="300" Margin="34,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Имя родителя" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Иван" Width="300" Margin="68,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Номер родителя" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="+79528120202" Width="300" Margin="52,5,0,5"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Приказ" Margin="5" VerticalContentAlignment="Center"></Label>
+            <TextBox Watermark="Приказ №185" Width="300" Margin="116,5,0,5"></TextBox>
+        </StackPanel>
+        <Panel>
+            <Button Margin="20" Content="Добавить" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Click="Add_Button"></Button>
+            <Button Margin="20" Content="Закрыть" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Click="Ext_Button"></Button>
+        </Panel>
+    </StackPanel>
 </Window>

@@ -101,7 +101,7 @@
                                         <DataGrid.Columns>
                                                 <DataGridTextColumn Header="Название" Binding= "{Binding Name}"/>
                                                 <DataGridTextColumn Header="Дата проведения" Binding= "{Binding Date}"/>
-                                                <DataGridTextColumn Header="Местопроведение" Binding= "{Binding Location}"/>
+                                                <DataGridTextColumn Header="Локация" Binding= "{Binding Location}"/>
                                                 <DataGridTextColumn Header="Место" Binding= "{Binding Count}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>

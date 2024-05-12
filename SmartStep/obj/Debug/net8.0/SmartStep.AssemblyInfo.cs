@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartStep")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45e3be44276c79c16cc27cbe7d315bdd3cc93d55")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ef0e16b97c7553815aae6eeb88c54ce5b3ec5c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartStep")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartStep")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
