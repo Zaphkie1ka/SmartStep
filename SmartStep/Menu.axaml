@@ -12,20 +12,10 @@
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
                                         <StackPanel Orientation="Horizontal">
                                                 <Label Content="Месяц " FontSize="18" VerticalAlignment="Center"></Label>
-                                                <ComboBox Margin="10,0,0,0">
-                                                        <ComboBoxItem>Январь</ComboBoxItem>
-                                                        <ComboBoxItem>Февраль</ComboBoxItem>
-                                                        <ComboBoxItem>Март</ComboBoxItem>
-                                                        <ComboBoxItem>Апрель</ComboBoxItem>
-                                                        <ComboBoxItem>Май</ComboBoxItem>
-                                                        <ComboBoxItem>Июнь</ComboBoxItem>
-                                                        <ComboBoxItem>Июль</ComboBoxItem>
-                                                        <ComboBoxItem>Август</ComboBoxItem>
-                                                        <ComboBoxItem>Сентябрь</ComboBoxItem>
-                                                        <ComboBoxItem>Октябрь</ComboBoxItem>
-                                                        <ComboBoxItem>Ноябрь</ComboBoxItem>
-                                                        <ComboBoxItem>Декабрь</ComboBoxItem>
+                                                <ComboBox x:Name="comboBoxMonth" SelectionChanged="ComboBoxMonth_OnSelectionChanged" Margin="10,0,0,0">
+                                                        
                                                 </ComboBox>
+                                                <Button Content="Обновить" Click="Update_Table"></Button>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                                 <Label Content="Группа" FontSize="18" VerticalAlignment="Center"></Label>
