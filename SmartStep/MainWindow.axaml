@@ -13,7 +13,7 @@
                 <TextBox x:Name="passbox" Width="350" Watermark="Введите пароль..." PasswordChar="*" HorizontalAlignment="Center"/>
                 <Panel>
                         <Button Content="Войти" Click="LogIn_Click" HorizontalAlignment="Left" Margin="35,10,0,0"/> 
-                        <Button Content="Гость" Click="Guest_Click" HorizontalAlignment="Right" Margin="0,10,35,0"/> 
+                        <Button Content="Выйти" Click="Exit_Click" HorizontalAlignment="Right" Margin="0,10,35,0"/> 
                 </Panel>
         </StackPanel>
 </Window>

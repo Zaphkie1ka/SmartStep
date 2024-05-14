@@ -11,7 +11,7 @@ public class DBHelper
         _connectionString = new MySqlConnectionStringBuilder
         {
             Server = "localhost",
-            Database = "smartstep",
+            Database = "preschool",
             UserID = "root",
             Password = "rootroot"
         };

@@ -15,7 +15,7 @@
                                                 <ComboBox x:Name="comboBoxMonth" SelectionChanged="ComboBoxMonth_OnSelectionChanged" Margin="10,0,0,0">
                                                         
                                                 </ComboBox>
-                                                <Button Content="Обновить" Click="Update_Table"></Button>
+                                                <Button Content="Обновить" Click="Update_Table" Margin="10,0,0,0"></Button>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                                 <Label Content="Группа" FontSize="18" VerticalAlignment="Center"></Label>
@@ -46,7 +46,7 @@
                                                         <Button Content="Добавить" Click="Button_Add_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                                         <Button Content="Изменить" Click="Button_Upd_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                                 </StackPanel>
-                                                <DataGrid x:Name="Student1"
+                                                <DataGrid x:Name="Students"
                                                           AutoGenerateColumns="False"
                                                           IsReadOnly="True"
                                                           GridLinesVisibility="All"
@@ -78,7 +78,7 @@
                                         <Button Content="Добавить" Click="Button_Add_Events" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                         <Button Content="Изменить" Click="Button_Upd_Events" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                 </StackPanel>
-                                <DataGrid x:Name="Events1"
+                                <DataGrid x:Name="Events"
                                           AutoGenerateColumns="False"
                                           IsReadOnly="True"
                                           Background="#FAEBD7"
@@ -92,7 +92,7 @@
                                                 <DataGridTextColumn Header="Название" Binding= "{Binding Name}"/>
                                                 <DataGridTextColumn Header="Дата проведения" Binding= "{Binding Date}"/>
                                                 <DataGridTextColumn Header="Локация" Binding= "{Binding Location}"/>
-                                                <DataGridTextColumn Header="Место" Binding= "{Binding Count}"/>
+                                                <DataGridTextColumn Header="Количество человек" Binding= "{Binding Count}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>
                         </StackPanel>
@@ -103,7 +103,7 @@
                                         <Button Content="Добавить" Click="Button_Add_Progress" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                         <Button Content="Изменить" Click="Button_Upd_Progress" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                 </StackPanel>
-                                <DataGrid x:Name="Achievements1"
+                                <DataGrid x:Name="Progress"
                                           AutoGenerateColumns="False"
                                           IsReadOnly="True"
                                           Background="#FAEBD7"
@@ -127,7 +127,7 @@
                                         <Button Content="Добавить" Click="Button_Add_Safety" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                         <Button Content="Изменить" Click="Button_Upd_Safety" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
                                 </StackPanel>
-                                <DataGrid x:Name="Safety1"
+                                <DataGrid x:Name="Safety"
                                           AutoGenerateColumns="False"
                                           IsReadOnly="True"
                                           Background="#FAEBD7"

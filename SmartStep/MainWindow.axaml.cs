@@ -46,8 +46,8 @@ public partial class MainWindow : Window
         LogIn();
     }
 
-    private void Guest_Click(object? sender, RoutedEventArgs e)
+    private void Exit_Click(object? sender, RoutedEventArgs e)
     {
-        
+        Close();
     }
 }

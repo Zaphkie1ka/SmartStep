@@ -6,6 +6,7 @@ using Avalonia.Data;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using MsBox.Avalonia;
+using MySql.Data.MySqlClient;
 using SmartStep.Models;
 
 namespace SmartStep;
@@ -27,77 +28,62 @@ public partial class Menu : Window
     public Menu()
     {
         InitializeComponent();
-        //ShowBD();
-        
+        ShowBD();
+        GenerateColumnsForMonth();
     }
 
-    /*public void ShowBD()
+    public void ShowBD()
     {
-        
-    }*/
-    private void GenerateColumnsForMonth()
-    {
-        MainGrid.Columns.Clear();
-        DataGridTextColumn studentColumn = new DataGridTextColumn
+        _students = new List<Students>();
+        _directions = new List<Directions>();
+        _events = new List<Events>();
+        DBHelper db = new DBHelper();
+        using (var connection = new MySqlConnection(db._connectionString.ConnectionString))
         {
-            Header = "ФИО ученика",
-            Binding = new Binding("Models.Students.First_Name")
-        };
-        MainGrid.Columns.Add(studentColumn);
-
-        string[] months = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
-        comboBoxMonth.ItemsSource = months;
-
-        try
-        {
-            string selectedMonth = (string)comboBoxMonth.SelectedItem;
-            int monthNumber = Convert.ToInt32(selectedMonth);
-
-            int daysInMonth = DateTime.DaysInMonth(year, monthNumber);
-
-            for (int i = 1; i <= daysInMonth; i++)
+            connection.Open();
+            using (var command = connection.CreateCommand())
             {
-                DataGridTextColumn column = new DataGridTextColumn
+                command.CommandText = "SELECT * From Students";
+                using (var reader = command.ExecuteReader())
                 {
-                    Header = i.ToString(),
-                    Binding = new Binding($"Day{i}")
-                };
-                MainGrid.Columns.Add(column);
+                    while (reader.Read())
+                    {
+                        _students.Add(new Students
+                        {
+                            ID = reader.GetInt32("ID"),
+                            First_Name = reader.GetString("First_Name"),
+                            Last_Name = reader.GetString("Last_Name"),
+                            Birthday = reader.GetDateTime("Birthday"),
+                            School = reader.GetString("School"),
+                            Class = reader.GetString("Class"),
+                            Address = reader.GetString("Address"),
+                            ParentFirst_Name = reader.GetString("ParentFirst_Name"),
+                            ParentLast_Name = reader.GetString("ParentLast_Name"),
+                            ParentNumber = reader.GetString("ParentNumber"),
+                            OrderNumber = reader.GetInt32("OrderNumber")
+                        });
+                    }
+                }
+                command.CommandText = "SELECT * From Events";
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        _events.Add(new Events
+                        {
+                            ID = reader.GetInt32("ID"),
+                            Name = reader.GetString("Name"),
+                            Date = reader.GetDateTime("Date"),
+                            Location = reader.GetString("Location"),
+                            Count = reader.GetInt32("Count")
+                        });
+                    }
+                }
+                connection.Close();
             }
+            Students.ItemsSource = _students;
+            Events.ItemsSource = _events;
         }
-        catch (ArgumentOutOfRangeException ex)
-        {
-            // Обработка исключения
-            MessageBoxManager.GetMessageBoxStandard("Ошибка", "Пофиксите, разрабы!");
-        }
-
-        DataGridTextColumn dateColumn = new DataGridTextColumn
-        {
-            Header = "Дата проведения",
-            Binding = new Binding("Date")
-        };
-        MainGrid.Columns.Add(dateColumn);
-
-        DataGridTextColumn descriptionColumn = new DataGridTextColumn
-        {
-            Header = "Содержание занятия",
-            Binding = new Binding("Description")
-        };
-        MainGrid.Columns.Add(descriptionColumn);
-
-        DataGridTextColumn hoursColumn = new DataGridTextColumn
-        {
-            Header = "Часы занятия",
-            Binding = new Binding("Hours")
-        };
-        MainGrid.Columns.Add(hoursColumn);
-
-        DataGridTextColumn noteColumn = new DataGridTextColumn
-        {
-            Header = "Примечание",
-            Binding = new Binding("Note")
-        };
-        MainGrid.Columns.Add(noteColumn);
     }
     /*private void GenerateColumnsForMonth()
     {
@@ -108,13 +94,16 @@ public partial class Menu : Window
             Binding = new Binding("Models.Students.First_Name")
         };
         MainGrid.Columns.Add(studentColumn);
-        try
+
+        string[] months = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
+        comboBoxMonth.ItemsSource = months; // Устанавливаем источник данных для ComboBox
+
+// Теперь можно безопасно выбирать элемент из ComboBox
+        string selectedMonth = (string)comboBoxMonth.SelectedItem; // Выбираем месяц из ComboBox
+        if (selectedMonth != null)
         {
-            string[] months = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
-            comboBoxMonth.ItemsSource = months;
-            string selectedMonth = (string)comboBoxMonth.SelectedItem;
             int monthNumber = Convert.ToInt32(selectedMonth);
-            
+
             int daysInMonth = DateTime.DaysInMonth(year, monthNumber);
 
             for (int i = 1; i <= daysInMonth; i++)
@@ -127,11 +116,50 @@ public partial class Menu : Window
                 MainGrid.Columns.Add(column);
             }
         }
-        catch (ArgumentOutOfRangeException ex)
+        else
         {
-            MessageBoxManager.GetMessageBoxStandard("Ошибка", "Пофиксите, разрабы!");
+            // Обработка случая, когда элемент не выбран
+            MessageBoxManager.GetMessageBoxStandard("Ошибка", "Выберите месяц из списка");
         }
-        /*for (int day = 1; day <= DateTime.DaysInMonth(year, month); day++)
+
+        DataGridTextColumn dateColumn = new DataGridTextColumn
+        {
+            Header = "Дата проведения",
+            Binding = new Binding("Date")
+        };
+        MainGrid.Columns.Add(dateColumn);
+
+        DataGridTextColumn descriptionColumn = new DataGridTextColumn
+        {
+            Header = "Содержание занятия",
+            Binding = new Binding("Description")
+        };
+        MainGrid.Columns.Add(descriptionColumn);
+
+        DataGridTextColumn hoursColumn = new DataGridTextColumn
+        {
+            Header = "Часы занятия",
+            Binding = new Binding("Hours")
+        };
+        MainGrid.Columns.Add(hoursColumn);
+
+        DataGridTextColumn noteColumn = new DataGridTextColumn
+        {
+            Header = "Примечание",
+            Binding = new Binding("Note")
+        };
+        MainGrid.Columns.Add(noteColumn);
+    }*/
+    private void GenerateColumnsForMonth()
+    {
+        MainGrid.Columns.Clear();
+        DataGridTextColumn studentColumn = new DataGridTextColumn
+        {
+            Header = "ФИО ученика",
+            Binding = new Binding("Models.Students.First_Name")
+        };
+        MainGrid.Columns.Add(studentColumn);
+        for (int day = 1; day <= DateTime.DaysInMonth(year, month); day++)
         {
             DataGridTextColumn column = new DataGridTextColumn
             {
@@ -140,7 +168,7 @@ public partial class Menu : Window
                 Width = new DataGridLength(50)
             };
             MainGrid.Columns.Add(column);
-        }#1#
+        }
         DataGridTextColumn dateColumn = new DataGridTextColumn
         {
             Header = "Дата проведения",
@@ -165,7 +193,7 @@ public partial class Menu : Window
             Binding = new Binding("Note")
         };
         MainGrid.Columns.Add(noteColumn);
-    }*/
+    }
     private void Button_Add_Student(object? sender, RoutedEventArgs e)
     {
         StudentWindow windowstud = new StudentWindow();
