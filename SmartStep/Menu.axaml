@@ -43,32 +43,60 @@
                 <TabItem Header="Сведения об обучающихся" FontSize="20">
                                         <StackPanel Orientation="Vertical">
                                                 <StackPanel Orientation="Horizontal">
-                                                        <Button Content="Добавить" Click="Button_Add_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
-                                                        <Button Content="Изменить" Click="Button_Upd_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                                        </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                        <StackPanel Orientation="Vertical">
+                                                                <Label Content="Обучающиеся" FontSize="20" Margin="5"></Label>
+                                                                <StackPanel Orientation="Horizontal">
+                                                                        <Button Content="Добавить" Click="Button_Add_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                                                        <Button Content="Изменить" Click="Button_Upd_Student" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                                                </StackPanel>
+                                                                <DataGrid x:Name="Students"
+                                                                          AutoGenerateColumns="False"
+                                                                          IsReadOnly="True"
+                                                                          GridLinesVisibility="All"
+                                                                          BorderThickness="1"
+                                                                          BorderBrush="Gray"
+                                                                          Background="#FAEBD7"
+                                                                          Margin="0,10,0,0"
+                                                                          x:DataType="models:Students"
+                                                                          HorizontalAlignment="Left">
+                                                                        <DataGrid.Columns>
+                                                                                <DataGridTextColumn Header="Фамилия" Binding= "{Binding Last_Name}"/>
+                                                                                <DataGridTextColumn Header="Имя" Binding= "{Binding First_Name}"/>
+                                                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Birthday}"/>
+                                                                                <DataGridTextColumn Header="Школа" Binding= "{Binding School}"/>
+                                                                                <DataGridTextColumn Header="Класс" Binding= "{Binding Class}"/>
+                                                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding Address}"/>
+                                                                                <DataGridTextColumn Header="Фамилия родителя" Binding= "{Binding ParentLast_Name}"/>
+                                                                                <DataGridTextColumn Header="Имя родителя" Binding= "{Binding ParentFirst_Name}"/>
+                                                                                <DataGridTextColumn Header="Номер родителя" Binding= "{Binding ParentNumber}"/>
+                                                                                <DataGridTextColumn Header="Приказ" Binding= "{Binding OrderNumber}"/>
+                                                                        </DataGrid.Columns>
+                                                                </DataGrid>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                                                                <Label Content="Приказы" FontSize="20" Margin="5"></Label>
+                                                                <StackPanel Orientation="Horizontal">
+                                                                        <Button Content="Добавить" Click="Button_Add_Order" Width="100" HorizontalContentAlignment="Center" Margin="5"></Button>
+                                                                </StackPanel>
+                                                                <DataGrid x:Name="Order"
+                                                                          AutoGenerateColumns="False"
+                                                                          IsReadOnly="True"
+                                                                          GridLinesVisibility="All"
+                                                                          BorderThickness="1"
+                                                                          BorderBrush="Gray"
+                                                                          Background="#FAEBD7"
+                                                                          x:DataType="models:Orders"
+                                                                          Margin="0,10,0,0"
+                                                                          HorizontalAlignment="Left">
+                                                                        <DataGrid.Columns>
+                                                                                <DataGridTextColumn Header="Тип" Binding="{Binding Type}"></DataGridTextColumn>
+                                                                                <DataGridTextColumn Header="Дата" Binding="{Binding Date}"></DataGridTextColumn>
+                                                                        </DataGrid.Columns>
+                                                                </DataGrid>
+                                                        </StackPanel>
                                                 </StackPanel>
-                                                <DataGrid x:Name="Students"
-                                                          AutoGenerateColumns="False"
-                                                          IsReadOnly="True"
-                                                          GridLinesVisibility="All"
-                                                          BorderThickness="1"
-                                                          BorderBrush="Gray"
-                                                          Background="#FAEBD7"
-                                                          x:DataType="models:Students"
-                                                          Margin="0,20"
-                                                          HorizontalAlignment="Left">
-                                                        <DataGrid.Columns>
-                                                                <DataGridTextColumn Header="Фамилия" Binding= "{Binding Last_Name}"/>
-                                                                <DataGridTextColumn Header="Имя" Binding= "{Binding First_Name}"/>
-                                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Birthday}"/>
-                                                                <DataGridTextColumn Header="Школа" Binding= "{Binding School}"/>
-                                                                <DataGridTextColumn Header="Класс" Binding= "{Binding Class}"/>
-                                                                <DataGridTextColumn Header="Адрес" Binding= "{Binding Address}"/>
-                                                                <DataGridTextColumn Header="Фамилия родителя" Binding= "{Binding ParentLast_Name}"/>
-                                                                <DataGridTextColumn Header="Имя родителя" Binding= "{Binding ParentFirst_Name}"/>
-                                                                <DataGridTextColumn Header="Номер родителя" Binding= "{Binding ParentNumber}"/>
-                                                                <DataGridTextColumn Header="Приказ" Binding= "{Binding OrderNumber}"/>
-                                                        </DataGrid.Columns>
-                                                </DataGrid>
                                         </StackPanel>
                                 </TabItem>
                 

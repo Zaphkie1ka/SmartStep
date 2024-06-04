@@ -6,6 +6,7 @@ using Avalonia.Data;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using MsBox.Avalonia;
+using MsBox.Avalonia.Enums;
 using MySql.Data.MySqlClient;
 using SmartStep.Models;
 
@@ -18,7 +19,7 @@ public partial class Menu : Window
     private List<Safety> _safety;
     private List<Events> _events;
     private List<Progress> _progresses;
-    private List<Order> _orders;
+    private List<Orders> _orders;
     private List<StudentSafety> _studsafety;
     private List<StudentInGroup> _studingroup;
     private List<Groups> _groups;
@@ -34,56 +35,79 @@ public partial class Menu : Window
 
     public void ShowBD()
     {
-        _students = new List<Students>();
-        _directions = new List<Directions>();
-        _events = new List<Events>();
-        DBHelper db = new DBHelper();
-        using (var connection = new MySqlConnection(db._connectionString.ConnectionString))
+        try
         {
-            connection.Open();
-            using (var command = connection.CreateCommand())
+            _students = new List<Students>();
+            _directions = new List<Directions>();
+            _events = new List<Events>();
+            _orders = new List<Orders>();
+            DBHelper db = new DBHelper();
+            using (var connection = new MySqlConnection(db._connectionString.ConnectionString))
             {
-                command.CommandText = "SELECT * From Students";
-                using (var reader = command.ExecuteReader())
+                connection.Open();
+                using (var command = connection.CreateCommand())
                 {
-                    while (reader.Read())
+                    command.CommandText = "SELECT * From Students";
+                    using (var reader = command.ExecuteReader())
                     {
-                        _students.Add(new Students
+                        while (reader.Read())
                         {
-                            ID = reader.GetInt32("ID"),
-                            First_Name = reader.GetString("First_Name"),
-                            Last_Name = reader.GetString("Last_Name"),
-                            Birthday = reader.GetDateTime("Birthday"),
-                            School = reader.GetString("School"),
-                            Class = reader.GetString("Class"),
-                            Address = reader.GetString("Address"),
-                            ParentFirst_Name = reader.GetString("ParentFirst_Name"),
-                            ParentLast_Name = reader.GetString("ParentLast_Name"),
-                            ParentNumber = reader.GetString("ParentNumber"),
-                            OrderNumber = reader.GetInt32("OrderNumber")
-                        });
+                            _students.Add(new Students
+                            {
+                                ID = reader.GetInt32("ID"),
+                                First_Name = reader.GetString("First_Name"),
+                                Last_Name = reader.GetString("Last_Name"),
+                                Birthday = reader.GetDateTime("Birthday"),
+                                School = reader.GetString("School"),
+                                Class = reader.GetString("Class"),
+                                Address = reader.GetString("Address"),
+                                ParentFirst_Name = reader.GetString("ParentFirst_Name"),
+                                ParentLast_Name = reader.GetString("ParentLast_Name"),
+                                ParentNumber = reader.GetString("ParentNumber"),
+                                OrderNumber = reader.GetInt32("OrderNumber")
+                            });
+                        }
                     }
-                }
-                command.CommandText = "SELECT * From Events";
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
+                    command.CommandText = "SELECT * From Events";
+                    using (var reader = command.ExecuteReader())
                     {
-                        _events.Add(new Events
+                        while (reader.Read())
                         {
-                            ID = reader.GetInt32("ID"),
-                            Name = reader.GetString("Name"),
-                            Date = reader.GetDateTime("Date"),
-                            Location = reader.GetString("Location"),
-                            Count = reader.GetInt32("Count")
-                        });
+                            _events.Add(new Events
+                            {
+                                ID = reader.GetInt32("ID"),
+                                Name = reader.GetString("Name"),
+                                Date = reader.GetDateTime("Date"),
+                                Location = reader.GetString("Location"),
+                                Count = reader.GetInt32("Count")
+                            });
+                        }
                     }
+                    command.CommandText = "SELECT * From `Order`";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            _orders.Add(new Orders
+                            {
+                                ID = reader.GetInt32("ID"),
+                                Type = reader.GetString("Type"),
+                                Date = reader.GetDateTime("Date")
+                            });
+                        }
+                    }
+                    connection.Close();
                 }
-                connection.Close();
+                Students.ItemsSource = _students;
+                Events.ItemsSource = _events;
+                Order.ItemsSource = _orders;
             }
-            Students.ItemsSource = _students;
-            Events.ItemsSource = _events;
         }
+        catch (Exception e)
+        {
+            MessageBoxManager.GetMessageBoxStandard("Ошибка!", e.Message, ButtonEnum.Ok).ShowAsync();
+        }
+        
     }
     /*private void GenerateColumnsForMonth()
     {
@@ -196,8 +220,16 @@ public partial class Menu : Window
     }
     private void Button_Add_Student(object? sender, RoutedEventArgs e)
     {
-        StudentWindow windowstud = new StudentWindow();
-        windowstud.Show();
+        try
+        {
+            StudentWindow windowstud = new StudentWindow();
+            windowstud.Show();
+        }
+        catch (Exception exception)
+        {
+            MessageBoxManager.GetMessageBoxStandard("Ошибка!", exception.Message, ButtonEnum.Ok).ShowAsync();
+        }
+        
     }
 
     private void Button_Upd_Student(object? sender, RoutedEventArgs e)
@@ -246,5 +278,10 @@ public partial class Menu : Window
     private void ComboBoxMonth_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
         GenerateColumnsForMonth();
+    }
+
+    private void Button_Add_Order(object? sender, RoutedEventArgs e)
+    {
+        
     }
 }

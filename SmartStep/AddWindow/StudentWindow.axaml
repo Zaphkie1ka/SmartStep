@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:Models="clr-namespace:SmartStep.Models"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Height="600" Width="600" Background="#FAEBD7"
         x:Class="SmartStep.StudentWindow"
@@ -45,7 +46,13 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Приказ" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Приказ №185" Width="300" Margin="116,5,0,5"></TextBox>
+            <ComboBox x:Name="comboBoxOrder" Margin="115,5,0,5" Width="300">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="Models:Orders">
+                        <TextBlock Text="{Binding Type}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </StackPanel>
         <Panel>
             <Button Margin="20" Content="Добавить" Width="100" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Click="Add_Button"></Button>

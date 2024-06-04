@@ -4,6 +4,7 @@
     <option name="projectPerEditor">
       <map>
         <entry key="SmartStep/AddWindow/EventWindow.axaml" value="SmartStep/SmartStep.csproj" />
+        <entry key="SmartStep/AddWindow/OrderWindow.axaml" value="SmartStep/SmartStep.csproj" />
         <entry key="SmartStep/AddWindow/ProgressWindow.axaml" value="SmartStep/SmartStep.csproj" />
         <entry key="SmartStep/AddWindow/SafetyWindow.axaml" value="SmartStep/SmartStep.csproj" />
         <entry key="SmartStep/AddWindow/StudentWindow.axaml" value="SmartStep/SmartStep.csproj" />
