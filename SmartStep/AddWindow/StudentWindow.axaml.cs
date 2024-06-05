@@ -80,8 +80,7 @@ public partial class StudentWindow : Window
                     if (rowsCount == 0)
                     {
                         MessageBoxManager
-                            .GetMessageBoxStandard("Ошибка!", "Не удалось выполнить добавление!", ButtonEnum.Ok)
-                            .ShowAsync();
+                            .GetMessageBoxStandard("Ошибка!", "Не удалось выполнить добавление!", ButtonEnum.Ok).ShowAsync();
                     }
                 }
 

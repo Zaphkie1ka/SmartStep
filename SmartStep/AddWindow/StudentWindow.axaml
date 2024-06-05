@@ -10,39 +10,39 @@
         <Label Content="Студенты" HorizontalAlignment="Center" FontSize="26" Margin="0,10,0,10"></Label>
         <StackPanel Orientation="Horizontal">
             <Label Content="Фамилия" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Иванов" Width="300" Margin="103,5,0,5"></TextBox>
+            <TextBox Watermark="Иванов" Width="300" Margin="103,5,0,5" x:DataType="Models:Students" Text="{Binding Last_Name}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Имя" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Иван" Width="300" Margin="137,5,0,5"></TextBox>
+            <TextBox Watermark="Иван" Width="300" Margin="137,5,0,5" x:DataType="Models:Students" Text="{Binding Last_Name}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Дата рождения" Margin="5" VerticalContentAlignment="Center"></Label>
-            <DatePicker DayFormat="dd" Width="300" Margin="59,5,0,5"></DatePicker>
+            <DatePicker DayFormat="dd" Width="300" Margin="59,5,0,5" x:DataType="Models:Students" ></DatePicker>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Школа" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Школа №26" Width="300" Margin="121,5,0,5"></TextBox>
+            <TextBox Watermark="Школа №26" Width="300" Margin="121,5,0,5" x:DataType="Models:Students" Text="{Binding School}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Класс" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="4Г" Width="300" Margin="125,5,0,5"></TextBox>
+            <TextBox Watermark="4Г" Width="300" Margin="125,5,0,5" x:DataType="Models:Students" Text="{Binding Class}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Адрес" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Пушкина, 30" Width="300" Margin="124,5,0,5"></TextBox>
+            <TextBox Watermark="Пушкина, 30" Width="300" Margin="124,5,0,5" x:DataType="Models:Students" Text="{Binding Address}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Фамилия родителя" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Иванов" Width="300" Margin="34,5,0,5"></TextBox>
+            <TextBox Watermark="Иванов" Width="300" Margin="34,5,0,5" x:DataType="Models:Students" Text="{Binding ParentLast_Name}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Имя родителя" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Иван" Width="300" Margin="68,5,0,5"></TextBox>
+            <TextBox Watermark="Иван" Width="300" Margin="68,5,0,5" x:DataType="Models:Students" Text="{Binding ParentFirst_Name}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Номер родителя" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="+79528120202" Width="300" Margin="52,5,0,5"></TextBox>
+            <TextBox Watermark="+79528120202" Width="300" Margin="52,5,0,5" x:DataType="Models:Students" Text="{Binding ParentNumber}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Приказ" Margin="5" VerticalContentAlignment="Center"></Label>

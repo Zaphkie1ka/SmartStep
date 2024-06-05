@@ -31,6 +31,7 @@ public partial class MainWindow : Window
         adapter.Fill(table);
         if (table.Rows.Count > 0)
         {
+            
             window2.Show();
             Close();
         }

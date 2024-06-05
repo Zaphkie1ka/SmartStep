@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
@@ -57,7 +58,7 @@ public partial class Menu : Window
                                 ID = reader.GetInt32("ID"),
                                 First_Name = reader.GetString("First_Name"),
                                 Last_Name = reader.GetString("Last_Name"),
-                                Birthday = reader.GetDateTime("Birthday"),
+                                Birthday = new DateTime(reader.GetDateTime("Birthday").Year, reader.GetDateTime("Birthday").Month, reader.GetDateTime("Birthday").Day),
                                 School = reader.GetString("School"),
                                 Class = reader.GetString("Class"),
                                 Address = reader.GetString("Address"),
