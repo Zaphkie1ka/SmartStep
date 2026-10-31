@@ -21,6 +21,13 @@
     </ItemGroup>
 
     <ItemGroup>
+        <!-- Local DB settings (not committed): copy appsettings.example.json to appsettings.json -->
+        <None Include="appsettings.json" Condition="Exists('appsettings.json')">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
       <Compile Update="AddWindow\StudentWindow.axaml.cs">
         <DependentUpon>StudentWindow.axaml</DependentUpon>
         <SubType>Code</SubType>

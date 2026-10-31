@@ -1,0 +1,14 @@
+# SmartStep
+
+Десктопное приложение (Avalonia 11, .NET 8, MySQL) для учёта обучающихся: студенты, группы, мероприятия, успеваемость, приказы и инструктажи по технике безопасности.
+
+## Запуск
+
+1. Установите .NET 8 SDK и MySQL.
+2. Создайте базу данных `smartstep` и таблицы (`Students`, `Events`, `Order`, `Groups`, `Directions`, `Progress`, `Safety`, `StudentSafety`, `StudentInGroup`).
+3. Настройте подключение к БД одним из способов:
+   - скопируйте `SmartStep/appsettings.example.json` в `SmartStep/appsettings.json` и укажите свои значения (файл не попадает в git);
+   - или задайте переменные окружения `SMARTSTEP_DB_SERVER`, `SMARTSTEP_DB_PORT`, `SMARTSTEP_DB_NAME`, `SMARTSTEP_DB_USER`, `SMARTSTEP_DB_PASSWORD` (они имеют приоритет над файлом).
+4. Запустите: `dotnet run --project SmartStep`.
+
+Не используйте пользователя `root` для приложения: создайте отдельного пользователя MySQL с правами только на базу `smartstep`.

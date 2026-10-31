@@ -1,0 +1,18 @@
+## .NET / build output
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+
+## IDE
+.idea/
+.vs/
+.vscode/
+
+## Local configuration with secrets (copy appsettings.example.json to appsettings.json)
+SmartStep/appsettings.json
+
+## OS
+.DS_Store
+Thumbs.db

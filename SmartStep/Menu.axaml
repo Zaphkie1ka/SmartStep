@@ -64,7 +64,7 @@
                                                                         <DataGrid.Columns>
                                                                                 <DataGridTextColumn Header="Фамилия" Binding= "{Binding Last_Name}"/>
                                                                                 <DataGridTextColumn Header="Имя" Binding= "{Binding First_Name}"/>
-                                                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Birthday}"/>
+                                                                                <DataGridTextColumn Header="Дата рождения" Binding= "{Binding Birthday, StringFormat=dd.MM.yyyy}"/>
                                                                                 <DataGridTextColumn Header="Школа" Binding= "{Binding School}"/>
                                                                                 <DataGridTextColumn Header="Класс" Binding= "{Binding Class}"/>
                                                                                 <DataGridTextColumn Header="Адрес" Binding= "{Binding Address}"/>
