@@ -219,12 +219,16 @@ public partial class Menu : Window
         };
         MainGrid.Columns.Add(noteColumn);
     }
-    private void Button_Add_Student(object? sender, RoutedEventArgs e)
+    private async void Button_Add_Student(object? sender, RoutedEventArgs e)
     {
         try
         {
             StudentWindow windowstud = new StudentWindow();
-            windowstud.Show();
+            bool added = await windowstud.ShowDialog<bool>(this);
+            if (added)
+            {
+                ShowBD();
+            }
         }
         catch (Exception exception)
         {

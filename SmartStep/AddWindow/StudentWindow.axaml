@@ -14,11 +14,11 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Имя" Margin="5" VerticalContentAlignment="Center"></Label>
-            <TextBox Watermark="Иван" Width="300" Margin="137,5,0,5" x:DataType="Models:Students" Text="{Binding Last_Name}"></TextBox>
+            <TextBox Watermark="Иван" Width="300" Margin="137,5,0,5" x:DataType="Models:Students" Text="{Binding First_Name}"></TextBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Дата рождения" Margin="5" VerticalContentAlignment="Center"></Label>
-            <DatePicker DayFormat="dd" Width="300" Margin="59,5,0,5" x:DataType="Models:Students" ></DatePicker>
+            <DatePicker x:Name="datePickerBirthday" DayFormat="dd" Width="300" Margin="59,5,0,5"></DatePicker>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Label Content="Школа" Margin="5" VerticalContentAlignment="Center"></Label>
