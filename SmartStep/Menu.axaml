@@ -118,7 +118,7 @@
                                           HorizontalAlignment="Left">
                                         <DataGrid.Columns>
                                                 <DataGridTextColumn Header="Название" Binding= "{Binding Name}"/>
-                                                <DataGridTextColumn Header="Дата проведения" Binding= "{Binding Date}"/>
+                                                <DataGridTextColumn Header="Дата проведения" Binding= "{Binding Date, StringFormat=dd.MM.yyyy}"/>
                                                 <DataGridTextColumn Header="Локация" Binding= "{Binding Location}"/>
                                                 <DataGridTextColumn Header="Количество человек" Binding= "{Binding Count}"/>
                                         </DataGrid.Columns>
@@ -142,8 +142,8 @@
                                           Margin="0,20"
                                           HorizontalAlignment="Left">
                                         <DataGrid.Columns>
-                                                <DataGridTextColumn Header="Студент" Binding= "{Binding StudentName}"/>
-                                                <DataGridTextColumn Header="Название мероприятия" Binding= "{Binding EventName}"/>
+                                                <DataGridTextColumn Header="Студент" Binding= "{Binding StudentFullName}"/>
+                                                <DataGridTextColumn Header="Название мероприятия" Binding= "{Binding EventTitle}"/>
                                                 <DataGridTextColumn Header="Результат участия" Binding= "{Binding Result}"/>
                                         </DataGrid.Columns>
                                 </DataGrid>

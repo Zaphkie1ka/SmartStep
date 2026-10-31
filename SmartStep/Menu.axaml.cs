@@ -42,6 +42,8 @@ public partial class Menu : Window
             _directions = new List<Directions>();
             _events = new List<Events>();
             _orders = new List<Orders>();
+            _progresses = new List<Progress>();
+            _safety = new List<Safety>();
             DBHelper db = new DBHelper();
             using (var connection = new MySqlConnection(db._connectionString.ConnectionString))
             {
@@ -97,11 +99,46 @@ public partial class Menu : Window
                             });
                         }
                     }
-                    connection.Close();
+                    command.CommandText =
+                        "SELECT p.ID, p.StudentName, p.EventName, p.Result, " +
+                        "CONCAT(s.Last_Name, ' ', s.First_Name) AS StudentFullName, e.Name AS EventTitle " +
+                        "FROM Progress p " +
+                        "LEFT JOIN Students s ON s.ID = p.StudentName " +
+                        "LEFT JOIN Events e ON e.ID = p.EventName";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            _progresses.Add(new Progress
+                            {
+                                ID = reader.GetInt32("ID"),
+                                StudentName = reader.GetInt32("StudentName"),
+                                EventName = reader.GetInt32("EventName"),
+                                Result = reader.IsDBNull(reader.GetOrdinal("Result")) ? "" : reader.GetString("Result"),
+                                StudentFullName = reader.IsDBNull(reader.GetOrdinal("StudentFullName")) ? "" : reader.GetString("StudentFullName"),
+                                EventTitle = reader.IsDBNull(reader.GetOrdinal("EventTitle")) ? "" : reader.GetString("EventTitle")
+                            });
+                        }
+                    }
+                    command.CommandText = "SELECT * From Safety";
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            _safety.Add(new Safety
+                            {
+                                ID = reader.GetInt32("ID"),
+                                Name = reader.GetString("Name"),
+                                Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? "" : reader.GetString("Description")
+                            });
+                        }
+                    }
                 }
                 Students.ItemsSource = _students;
                 Events.ItemsSource = _events;
                 Order.ItemsSource = _orders;
+                Progress.ItemsSource = _progresses;
+                Safety.ItemsSource = _safety;
             }
         }
         catch (Exception e)
@@ -242,10 +279,20 @@ public partial class Menu : Window
         
     }
 
-    private void Button_Add_Events(object? sender, RoutedEventArgs e)
+    private async void Button_Add_Events(object? sender, RoutedEventArgs e)
     {
-        EventWindow windowevent = new EventWindow();
-        windowevent.Show();
+        try
+        {
+            EventWindow windowevent = new EventWindow();
+            if (await windowevent.ShowDialog<bool>(this))
+            {
+                ShowBD();
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBoxManager.GetMessageBoxStandard("Ошибка!", exception.Message, ButtonEnum.Ok).ShowAsync();
+        }
     }
 
     private void Button_Upd_Events(object? sender, RoutedEventArgs e)
@@ -253,10 +300,20 @@ public partial class Menu : Window
         
     }
 
-    private void Button_Add_Progress(object? sender, RoutedEventArgs e)
+    private async void Button_Add_Progress(object? sender, RoutedEventArgs e)
     {
-        ProgressWindow windowprog = new ProgressWindow();
-        windowprog.Show();
+        try
+        {
+            ProgressWindow windowprog = new ProgressWindow();
+            if (await windowprog.ShowDialog<bool>(this))
+            {
+                ShowBD();
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBoxManager.GetMessageBoxStandard("Ошибка!", exception.Message, ButtonEnum.Ok).ShowAsync();
+        }
     }
 
     private void Button_Upd_Progress(object? sender, RoutedEventArgs e)
@@ -264,10 +321,20 @@ public partial class Menu : Window
         
     }
 
-    private void Button_Add_Safety(object? sender, RoutedEventArgs e)
+    private async void Button_Add_Safety(object? sender, RoutedEventArgs e)
     {
-        SafetyWindow windowsafe = new SafetyWindow();
-        windowsafe.Show();
+        try
+        {
+            SafetyWindow windowsafe = new SafetyWindow();
+            if (await windowsafe.ShowDialog<bool>(this))
+            {
+                ShowBD();
+            }
+        }
+        catch (Exception exception)
+        {
+            MessageBoxManager.GetMessageBoxStandard("Ошибка!", exception.Message, ButtonEnum.Ok).ShowAsync();
+        }
     }
 
     private void Button_Upd_Safety(object? sender, RoutedEventArgs e)
