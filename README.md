@@ -5,7 +5,7 @@
 ## Запуск
 
 1. Установите .NET 8 SDK и MySQL.
-2. Создайте базу данных `smartstep` и таблицы (`Students`, `Events`, `Order`, `Groups`, `Directions`, `Progress`, `Safety`, `StudentSafety`, `StudentInGroup`).
+2. Создайте базу данных и таблицы: `mysql -u root -p < database/schema.sql`. Скрипт также создаёт пользователя для входа в приложение: логин `admin`, пароль `admin` (при первом входе пароль автоматически заменяется на BCrypt-хеш; смените его) и один пример приказа.
 3. Настройте подключение к БД одним из способов:
    - скопируйте `SmartStep/appsettings.example.json` в `SmartStep/appsettings.json` и укажите свои значения (файл не попадает в git);
    - или задайте переменные окружения `SMARTSTEP_DB_SERVER`, `SMARTSTEP_DB_PORT`, `SMARTSTEP_DB_NAME`, `SMARTSTEP_DB_USER`, `SMARTSTEP_DB_PASSWORD` (они имеют приоритет над файлом).
